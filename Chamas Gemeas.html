@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz - Chamas Gêmeas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fce4ec;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .alternativas button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .alternativas button:hover {
+      background-color: #c2185b;
+    }
+
+    .jogadorAtual span {
+      font-weight: bold;
+    }
+
+    #feedback {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .placar {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .jogador {
+      margin: 10px 0;
+    }
+
+    .jogador button {
+      background-color: #FF9800;
+      font-size: 14px;
+    }
+
+    .jogador button:hover {
+      background-color: #F57C00;
+    }
+
+    button.geral {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #d81b60;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    #timer {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #E53935;
+    }
+
+    .paused {
+      color: gray;
+    }
+
+    .assinatura {
+      text-align: center;
+      font-family: 'Courier New', cursive;
+      font-size: 18px;
+      margin-top: 40px;
+      color: #ff4081;
+      animation: pulsar 2s infinite;
+      user-select: none;
+    }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz - Chamas Gêmeas</h1>
+
+    <div class="jogadorAtual">Agora é a vez de: <span id="jogadorAtual">Nenhum</span></div>
+    <div id="timer">⏳ Tempo: 10s</div>
+
+    <div id="pergunta" style="margin: 20px 0; font-size: 20px;">Clique em "Adicionar Jogador" e depois "Começar Jogo"</div>
+    <div id="alternativas"></div>
+
+    <div id="feedback"></div>
+
+    <button class="geral" onclick="adicionarJogador()">Adicionar Jogador</button>
+    <button class="geral" onclick="iniciarJogo()">Começar Jogo</button>
+    <button class="geral" onclick="togglePause()">⏸️ Pausar / Retomar</button>
+
+    <div class="placar">
+      <h2>Placar</h2>
+      <div id="jogadores"></div>
+    </div>
+  </div>
+
+  <div class="assinatura">By Miguel & Vany ❤️</div>
+
+  <script src="perguntas.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
